@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Namaste-React</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="root">
+      <!-- <h1>Hello World!</h1> -->
+      <!--This is one way to include react in a project. Just type in cdn react in google browser and take these two from the official react webpage.-->
+      <script
+        crossorigin
+        src="https://unpkg.com/react@18/umd/react.development.js"
+      ></script>
+      <script
+        crossorigin
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      ></script>
+
+      <script>
+        /*
+        To create a structure like this follow the below code:
+        <div id="parent">
+          <div id="child1">
+            <h1>I'm a h1 tag</h1>
+            <h2>I'm the sibling of h1 tag</h2> h1 and h2 are both children of child div.
+          </div>
+          <div id="child2">
+            <h1>I'm a h1 tag</h1>
+            <h2>I'm the sibling of h1 tag</h2> h1 and h2 are both children of child div.
+          </div>  
+        </div>
+        */
+        //Below is the code for the above commented out html structure. in pure react you create the structure something like this.
+        const parent = React.createElement("div", { id: "parent" }, [
+          React.createElement("div", { id: "child1" }, [
+            React.createElement("h1", { key: "1" }, "I'm a h1 tag"),
+            React.createElement(
+              "h2",
+              { key: "2" },
+              "I'm the sibling of h1 tag"
+            ),
+          ]),
+          React.createElement("div", { id: "child2" }, [
+            React.createElement("h1", { key: "1" }, "I'm a h1 tag"),
+            React.createElement(
+              "h2",
+              { key: "2" },
+              "I'm the sibling of h1 tag"
+            ),
+          ]),
+        ]);
+        // const element = React.createElement('h1', {id: "heading"}, "Hello from React!");
+        console.log(parent);
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        root.render(parent);
+      </script>
+    </div>
+  </body>
+</html>

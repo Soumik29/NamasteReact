@@ -1,0 +1,29 @@
+#heading {
+  color: blueviolet;
+}
+
+#parent {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+#child1 {
+  width: 50%;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+#child2 {
+  width: 50%;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
