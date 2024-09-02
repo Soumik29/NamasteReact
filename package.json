@@ -1,0 +1,29 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "This is a Namaste-React Course by Akshay Saini",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soumik29/NamasteReact.git"
+  },
+  "keywords": [
+    "react",
+    "namaste",
+    "react",
+    "soumik",
+    "mitra"
+  ],
+  "author": "Soumik Mitra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Soumik29/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/Soumik29/NamasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
