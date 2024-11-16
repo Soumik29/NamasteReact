@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 /*
         To create a structure like this follow the below code:
         <div id="parent">
