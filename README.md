@@ -1,8 +1,6 @@
 # Comments took from the App.js file.
-
 ---
 
-`
 
 - Header
 - - Header will have logo,
