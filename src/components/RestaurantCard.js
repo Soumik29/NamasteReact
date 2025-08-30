@@ -1,6 +1,7 @@
 import { CDN_URL } from "../utils/constants";
-const RestaurantCard = (props) => {
-  const { resData } = props;
+
+const RestaurantCard = ({ resData }) => {
+  console.log(resData);
   const formatCuisines  = (cuisines = []) => {
     if (cuisines.length === 0) return "No Cuisine to display";
     const cuisine = cuisines.join(", ");

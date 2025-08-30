@@ -12,6 +12,7 @@ const Body = () => {
     handleSearchFilter,
     handleRatingFilter,
   } = useFilteredRestaurant(resCard);
+  console.log(resCard);
   const onlineStatus = useOnlineStatus();
 
   if (!onlineStatus) {
