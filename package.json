@@ -41,11 +41,13 @@
     "vm-browserify": "^1.1.2"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
     "formik": "^2.4.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^6.22.0",
-    "react-router-native": "^6.30.0"
+    "react-router-native": "^6.30.0",
+    "tailwindcss": "^4.1.13"
   },
   "browserslist": [
     "last 2 versions"
