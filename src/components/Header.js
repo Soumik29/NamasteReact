@@ -5,20 +5,20 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [loginBtn, setLoginBtn] = useState("Login");
   return (
-    <div className="header">
-      <div className="logo-container">
-        <img src={image_URL} alt="restaurantLogo" />
+    <div className="flex justify-between bg-[oklch(27.4%_0.006_286.033)]/50 text-white backdrop-blur-2xl backdrop-sepia">
+      <div className="w-20 ml-5">
+        <img src={image_URL} alt="restaurantLogo" className="rounded-full w-15 h-15"/>
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="flex justify-between pr-3 gap-10">
+        <ul className="flex w-2xl md:w-2xl justify-around items-center pr-3">
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className="rounded-full hover:bg-[oklch(43.9%_0_0)] hover:max-w-full transition-all duration-300 h-0.5 p-2">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/about" className="rounded-full hover:bg-[oklch(43.9%_0_0)] hover:max-w-full transition-all duration-300 h-0.5 p-2">About</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" className="rounded-full hover:bg-[oklch(43.9%_0_0)] hover:max-w-full transition-all duration-300 h-0.5 p-2">Contact</Link>
           </li>
         </ul>
         <button
