@@ -14,9 +14,9 @@ const useFilteredRestaurant = (restaurants) => {
   }, [restaurants]);
 
   const handleSearchFilter = () => {
-    const searchRes = rateRes.filter((resData) => {
-      resData.info.name.toLowerCase().includes(searchText.toLowerCase());
-    });
+    const searchRes = rateRes.filter((resData) => 
+      resData.info.name.toLowerCase().includes(searchText.toLowerCase())
+    );
     setFilterRes(searchRes);
   };
 

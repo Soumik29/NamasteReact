@@ -1,33 +1,45 @@
 import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = ({ resData }) => {
-  console.log(resData);
-  const formatCuisines  = (cuisines = []) => {
+  const formatCuisines = (cuisines = []) => {
     if (cuisines.length === 0) return "No Cuisine to display";
-    const cuisine = cuisines.join(", ");
     return (
-      <span>{cuisine}</span>  
-    )
-  }
+      <span className="text-sm text-gray-500 line-clamp-1">
+        {cuisines.join(", ")}
+      </span>
+    );
+  };
+
   return (
-    <div className="card">
+    <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden w-72 m-4 cursor-pointer border border-gray-100">
       <img
         src={CDN_URL + resData.cloudinaryImageId}
-        alt="Food Image"
-        className="foodImage"
+        alt={resData.name}
+        className="w-full h-44 object-cover"
       />
-      <div className="res-container">
-        <h3>{resData.name}</h3>
-        <div className="cuisines">
-          {formatCuisines(resData.cuisines)}
+      <div className="p-4 flex flex-col gap-2">
+        <h3 className="text-lg font-semibold text-gray-800 truncate">
+          {resData.name}
+        </h3>
+        {formatCuisines(resData.cuisines)}
+
+        <div className="flex justify-between items-center text-sm mt-2">
+          <span
+            className={`px-2 py-0.5 rounded-md text-white font-medium ${
+              resData.avgRating >= 4
+                ? "bg-green-500"
+                : resData.avgRating >= 3
+                ? "bg-yellow-500"
+                : "bg-red-500"
+            }`}
+          >
+            ⭐ {resData.avgRating}
+          </span>
+          <span className="text-gray-600">{resData.costForTwo}</span>
+          <span className="font-semibold text-amber-600">
+            {resData.sla.deliveryTime} min
+          </span>
         </div>
-      </div>
-      <div className="features">
-        <p>{resData.avgRating} stars</p>
-        <p>{resData.costForTwo}</p>
-        <p style={{ fontWeight: "bold" }}>
-          {resData.sla.deliveryTime} minutes
-        </p>
       </div>
     </div>
   );
