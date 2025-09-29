@@ -1,8 +1,9 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { promotedLabel } from "./RestaurantCard";
 import { Link } from "react-router-dom";
 import useRestaurantCard from "../utils/useRestaurantCard";
 import useFilteredRestaurant from "../utils/useFilteredRestaurant";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { Result } from "postcss";
 
 const Body = () => {
   const { resCard, loading } = useRestaurantCard();
@@ -13,9 +14,9 @@ const Body = () => {
     handleSearchFilter,
     handleRatingFilter,
   } = useFilteredRestaurant(resCard);
-
+  console.log(filterRes);
   const onlineStatus = useOnlineStatus();
-
+  const RestaurantCardPromoted = promotedLabel(RestaurantCard);
   if (!onlineStatus) {
     return (
       <h1 className="text-center mt-20 text-xl font-semibold text-red-600">
@@ -57,14 +58,15 @@ const Body = () => {
       </div>
 
       {/* Restaurant Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 p-6 place-items-center">
         {filterRes.map((restaurantData) => (
-          <Link
+          restaurantData.info.avgRating >= 4.5 ? (<RestaurantCardPromoted resData={restaurantData.info} />): 
+        (
+          <RestaurantCard
             key={restaurantData.info.id}
-            to={`/restaurant/${restaurantData.info.id}`}
-          >
-            <RestaurantCard resData={restaurantData.info} />
-          </Link>
+            resData={restaurantData.info}
+          />
+        )
         ))}
       </div>
     </div>

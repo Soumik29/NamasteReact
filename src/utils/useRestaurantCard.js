@@ -9,6 +9,7 @@ const useRestaurantCard = () => {
   const fetchData = async () => {
     const data = await fetch("https://pastebin.com/raw/0QcdEDBL");
     const json = await data.json();
+    console.log(json);
     const restaurantInfo =
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
