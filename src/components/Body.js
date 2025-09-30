@@ -14,7 +14,7 @@ const Body = () => {
     handleSearchFilter,
     handleRatingFilter,
   } = useFilteredRestaurant(resCard);
-  console.log(filterRes);
+  console.log(filterRes)
   const onlineStatus = useOnlineStatus();
   const RestaurantCardPromoted = promotedLabel(RestaurantCard);
   if (!onlineStatus) {
@@ -58,7 +58,7 @@ const Body = () => {
       </div>
 
       {/* Restaurant Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 p-6 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 place-items-center">
         {filterRes.map((restaurantData) => (
           restaurantData.info.avgRating >= 4.5 ? (<RestaurantCardPromoted resData={restaurantData.info} />): 
         (

@@ -37,7 +37,7 @@ const RestaurantCard = ({ resData }) => {
             >
               ⭐ {resData.avgRating}
             </span>
-            <span className="text-gray-600">{resData.costForTwo}</span>
+            <span className="text-gray-600">₹{resData.costForTwo / 100} for two</span>
             <span className="font-semibold text-amber-600">
               {resData.sla.deliveryTime} min
             </span>

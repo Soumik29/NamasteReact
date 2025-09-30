@@ -5,4 +5,4 @@ export const CDN_URL =
 export const image_URL =
   "https://www.creativefabrica.com/wp-content/uploads/2019/08/Restaurant-Logo-by-Koko-Store-580x386.jpg";
 
-export const menu_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.07279730463656&lng=73.07968616479127&restaurantId=";
+export const menu_API = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9293877&lng=77.6088608&restaurantId=";
