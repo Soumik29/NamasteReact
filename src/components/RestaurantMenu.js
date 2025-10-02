@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import MenuItems from "./MenuItems";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -20,7 +21,9 @@ const RestaurantMenu = () => {
       {/* Restaurant Info Card */}
       <div className="bg-white rounded-xl shadow-md p-6 mb-6 border border-gray-100">
         <h1 className="text-2xl font-bold text-gray-800">{name}</h1>
-        <p className="text-gray-600 mt-1">{locality}, {areaName}</p>
+        <p className="text-gray-600 mt-1">
+          {locality}, {areaName}
+        </p>
         <p className="text-lg font-semibold text-amber-600 mt-2">
           ₹{costForTwo / 100} for two
         </p>
@@ -40,12 +43,7 @@ const RestaurantMenu = () => {
 
       {/* Placeholder for menu items (future expansion) */}
       <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
-        <h2 className="text-xl font-semibold text-gray-800 mb-4">
-          Menu
-        </h2>
-        <p className="text-gray-500">
-          Menu items will go here once API is integrated.
-        </p>
+        <MenuItems restaurantMenu={resMenu} />
       </div>
     </div>
   );

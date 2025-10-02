@@ -60,7 +60,7 @@ const Body = () => {
       {/* Restaurant Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 place-items-center">
         {filterRes.map((restaurantData) => (
-          restaurantData.info.avgRating >= 4.5 ? (<RestaurantCardPromoted resData={restaurantData.info} />): 
+          restaurantData.info.avgRating >= 4.5 ? (<RestaurantCardPromoted key={restaurantData.info.id} resData={restaurantData.info} />): 
         (
           <RestaurantCard
             key={restaurantData.info.id}
