@@ -4,8 +4,7 @@ import MenuItems from "./MenuItems";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const resMenu = useRestaurantMenu(resId);
-
+  const {resMenu, resTitle} = useRestaurantMenu(resId);
   if (resMenu === null) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -14,11 +13,10 @@ const RestaurantMenu = () => {
     );
   }
 
-  const { name, locality, areaName, costForTwo, cuisines } = resMenu;
+  const { name, locality, areaName, costForTwo, cuisines } = resTitle;
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      {/* Restaurant Info Card */}
       <div className="bg-white rounded-xl shadow-md p-6 mb-6 border border-gray-100">
         <h1 className="text-2xl font-bold text-gray-800">{name}</h1>
         <p className="text-gray-600 mt-1">
@@ -28,9 +26,8 @@ const RestaurantMenu = () => {
           ₹{costForTwo / 100} for two
         </p>
 
-        {/* Cuisines as tags */}
         <div className="flex flex-wrap gap-2 mt-4">
-          {cuisines.map((cuisine, index) => (
+          {cuisines?.map((cuisine, index) => (
             <span
               key={index}
               className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-medium"
@@ -40,8 +37,6 @@ const RestaurantMenu = () => {
           ))}
         </div>
       </div>
-
-      {/* Placeholder for menu items (future expansion) */}
       <div className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
         <MenuItems restaurantMenu={resMenu} />
       </div>

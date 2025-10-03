@@ -1,8 +1,13 @@
-const MenuItems = ({restaurantMenu}) => {
-    console.log(restaurantMenu);
-    return (<div>
-        <h1 className="font-bold text-2xl text-center">{restaurantMenu.name}</h1>
-    </div> )  
+const MenuItems = ({ restaurantMenu }) => {
+  return (
+    <div>
+      {restaurantMenu.map((menu) => (
+        <div>
+          <h1 className="text-3xl">{menu.name}</h1>
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default MenuItems;
