@@ -7,16 +7,22 @@ const useRestaurantCard = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/search/v3?lat=12.9261243&lng=77.60707029999999&str=north%20indian&trackingId=undefined&submitAction=ENTER&queryUniqueId=bccdc5ae-30de-39ce-57d8-d7b8c618d783"
-    );
-    const json = await data.json();
-    const restaurantInfo =
-      json?.data?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards?.map(
-        (c) => c.card.card
+    try {
+      const response = await fetch(
+        "https://namastedev.com/api/v1/listRestaurants",
+        {
+          method: "GET",
+        }
       );
-    setResCard(restaurantInfo || []);
-    setLoading(false);
+      const data = await response.json();
+      console.log(data);
+      const restaurants =
+        data.data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+      setResCard(restaurants);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
   return { resCard, loading };
 };
