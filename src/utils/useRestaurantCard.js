@@ -9,10 +9,7 @@ const useRestaurantCard = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "https://namastedev.com/api/v1/listRestaurants",
-        {
-          method: "GET",
-        }
+        "https://namastedev.com/api/v1/listRestaurants"
       );
       const data = await response.json();
       console.log(data);
